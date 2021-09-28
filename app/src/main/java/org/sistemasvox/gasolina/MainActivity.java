@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
         Double pb = Double.parseDouble(precoBaixo.getText().toString());
         Double real = Double.parseDouble(reais.getText().toString());
         Double porcetagem = (((pa * 100.00) / pb) - 100.00);
-        Double dif = Math.abs((real * (pa - pb) / pb));
+        Double dif = Math.abs((real / pa) - (real / pb));
         String s = "Diferença em porcentagem: " + porcetagem + "%.\n";
         s += ("Litros ganhos a +: " + (dif + "L.\n"));
-        s += ("Economia em R$: " + ((pa - pb) * real)) + ".";
+        s += ("Economia em R$: " + (dif * pb)) + ".";
         result.setText(s);
     }
 }
